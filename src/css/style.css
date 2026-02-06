@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url(variables.css);
+
+body {
+    margin: auto;
+    background-color: var(--off-white);
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    color: var(--gray);
+    padding: 30px;
+    
+}
+
+.cabecalho {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    align-items: center;
+
+}
+.menu-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    z-index: 2000;
+}
+.menu-btn.ativo {
+    position: fixed; 
+    top: 30px;       
+    right: 30px;     
+}
+.nav{
+    display: block;
+    position: absolute;
+}
+.nav.aberto{
+    display:block;
+}
+.nav.aberto::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Preto 50% transparente */
+    z-index: 1000; /* Fica atrás do menu branco, mas na frente do site */
+    display: block;
+}
+
+.nav ul{
+    display: flex;       
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;  
+    gap:25px;
+    right: -100%;
+    top: 0;           
+    background-color: var(--off-white);
+    width: 70vw;          
+    height: 100vh;       
+    z-index: 1001;
+    padding-top: 150px 0 0 30px;
+    transition: right 0.3s ease-in-out;
+    color: var(--very-dark-blue);
+    font-weight: 400;
+    font-size: 18px;
+}
+.nav.aberto ul {
+    right: 0;
+    padding: 100px 20px;
+}
+
+
+main {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.conteudo-principal{
+    grid-area: principal;
+    padding: 15px 20px;
+}
+.conteudo-principal .info-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+.conteudo-principal .info-principal h1{
+    color: var(--very-dark-blue);
+    font-size: 44px;
+    font-weight: 900;
+    max-height: 200px;
+    padding-top: 10px;
+}
+.conteudo-principal .info-principal .sub-info{
+    max-width: 365px;
+    padding-top: 15px;
+     
+}
+.conteudo-principal .info-principal .sub-info p{
+    padding-bottom: 25px;
+}
+.conteudo-principal .info-principal .sub-info a{
+    background-color: var(--soft-red);
+    color: var(--very-dark-blue);
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.conteudo-principal .info-principal .sub-info a:hover{
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+    cursor: pointer;
+}
+.news{
+    width: 95%;
+    margin: auto;
+    background-color: var(--very-dark-blue);
+    padding: 10px;
+    
+}
+
+.news h2{
+    color: var(--soft-orange);
+    font-size: 36px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+.news .extra-info{
+    border-bottom: 2px solid var(--gray);
+    padding: 15px 0;
+}
+.news .extra-info:last-child{
+    border: none;
+}
+.news .extra-info h4{
+    color: var(--off-white);
+    padding-bottom: 10px;
+}
+.news .extra-info h4:hover{
+    color: var(--soft-orange);
+    cursor: pointer;
+}
+.news .extra-info p{
+    color: var(--soft-gray);
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+}
+
+.footer .pesquisas{
+    display: flex;
+    gap: 20px;
+}
+
+.footer .pesquisas img{
+    width: 110px;
+    height: 110px;
+}
+.footer .pesquisas .descricao{
+    display: flex;
+    flex-direction: column;
+}
+.footer .pesquisas .descricao h2{
+    color: var(--soft-red);
+}
+.footer .pesquisas .descricao h4{
+    font-size: 18px;
+    color: var(--very-dark-blue);
+}
+.footer .pesquisas .descricao h4:hover{
+    color:var(--soft-red);
+    cursor: pointer;
+}
