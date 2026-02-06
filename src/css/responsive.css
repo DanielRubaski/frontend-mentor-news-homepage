@@ -1,13 +1,23 @@
+@media( width: 320px){
+    .conteudo-principal .info-principal h1{
+        font-size: 36px;
+    }
+}
 @media(min-width: 1000px) {
     body {
         max-width: 1440px;
         padding: 50px;
         height: 100vh;
     }
-
+    .cabecalho{
+        width: 85%;
+        margin: auto;
+    }
     main {
+        width: 85%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
         grid-template-areas:
             "principal principal info-direito"
             "principal principal info-direito"
@@ -44,23 +54,17 @@
         cursor: pointer;
     }
 
+    .conteudo-principal{
+        padding: 15px 20px 0;
+    }
     .conteudo-principal .info-principal {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .conteudo-principal .info-principal h1 {
-        font-size: 44px;
-        width: 35%;
-    }
-
-    .conteudo-principal .info-principal .sub-info{
-        width: 50%;
-    }
-
     .conteudo-principal .info-principal .sub-info p{
-        line-height: 30px;
+        line-height: 25px;
     }
 
     .news {
